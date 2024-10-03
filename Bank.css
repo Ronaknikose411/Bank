@@ -1,0 +1,323 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light gray background for contrast */
+    color: #333; /* Dark text for readability */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    width: 250px;
+    background-color: #800000; /* Maroon */
+    color: #fff; /* White text */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.left-sidebar .close {
+    cursor: pointer;
+    text-align: right;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #a52a2a; /* Darker Maroon */
+}
+
+.sidebar span {
+    margin-right: 10px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1; /* Allow main content to flex */
+    padding: 20px; /* Padding for inner spacing */
+    background-color: white; /* White background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px; /* Margin around main content area */
+    margin-right: 270px; /* Ensure space for the fixed right sidebar */
+    display: flex;
+    flex-direction: column; /* Allow stacking of elements */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+/* Title and Balance Wrapper */
+.title-balance-wrapper {
+    display: flex;
+    justify-content: space-between; /* Space between title and balance */
+    align-items: center; /* Center align items vertically */
+    margin-bottom: 20px; /* Space below title */
+}
+
+/* Title Styles */
+.title {
+    font-size: 28px; /* Larger font for title */
+    font-weight: bold; /* Bold title */
+    color: #800000; /* Maroon for title */
+}
+
+/* Balance Section */
+.balance-section {
+    background-color: #e7f1ff; /* Light blue background for balance */
+    padding: 20px; /* Padding for balance section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Function Buttons Section */
+.function-buttons {
+    display: flex;
+    justify-content: space-around; /* Distribute buttons evenly */
+    margin: 20px 0; /* Margin around function buttons */
+}
+
+.function-btn {
+    padding: 15px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size for button text */
+    border: none;
+    border-radius: 5px; /* Rounded corners for buttons */
+    background-color: #800000; /* Maroon for buttons */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor for button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    width: 150px; /* Fixed width for uniformity */
+}
+
+.function-btn:hover {
+    background-color: #a52a2a; /* Darker maroon on hover */
+    transform: scale(1.05); /* Slightly grow the button on hover */
+}
+
+/* Transaction History Section */
+.transaction-history {
+    margin-top: 30px; /* Space above transaction history */
+}
+
+.transaction-history h3 {
+    margin-bottom: 10px; /* Space below section title */
+    color: #333; /* Dark text for visibility */
+    font-size: 22px; /* Increased font size */
+}
+
+/* Table Styles */
+table {
+    width: calc(100% - 10px); /* Full width for the table with a 10px gap */
+    border-collapse: collapse; /* Remove spacing between cells */
+    margin-top: 10px; /* Space above table */
+}
+
+table th,
+table td {
+    padding: 12px; /* Padding for table cells */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Light border for rows */
+}
+
+table th {
+    background-color: #800000; /* Header background color */
+    color: white; /* Header text color */
+    font-weight: bold; /* Bold header text */
+}
+
+/* Hover effect for table rows */
+table tr:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+/* Transaction Section in Modal */
+.transaction-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between transaction boxes */
+}
+
+/* Transaction Box Styles */
+.transaction-box {
+    display: flex; /* Flex for aligning items */
+    justify-content: space-between; /* Space between label and input */
+    align-items: center; /* Center vertically */
+    height: 60px; /* Set height for uniformity */
+}
+
+.transaction-box label {
+    margin-right: 10px; /* Space between label and input */
+    font-weight: bold; /* Bold label text */
+}
+
+.transaction-box input {
+    padding: 10px;
+    width: calc(70% - 20px); /* Adjusted width for inputs */
+    border: 1px solid #ccc; /* Border style for input */
+    border-radius: 4px; /* Rounded corners for input */
+    transition: border 0.3s; /* Smooth border transition */
+}
+
+.transaction-box input:focus {
+    border: 1px solid #800000; /* Maroon border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.transaction-box button {
+    padding: 10px;
+    background-color: #800000; /* Maroon for buttons */
+    color: white; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor for button */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+.transaction-box button:hover {
+    background-color: #a52a2a; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly grow the button on hover */
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    width: 250px; /* Fixed width */
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px;
+    height: 100vh; /* Full height for the right sidebar */
+    position: fixed; /* Fixes sidebar on the right */
+    right: 0; /* Stick the sidebar to the right */
+    top: 0; /* Start from the top */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* User Profile */
+.user-profile {
+    text-align: center; /* Center align profile content */
+    margin-bottom: 20px; /* Space below profile */
+}
+
+.user-profile img {
+    width: 80px; /* Size of the profile picture */
+    height: 80px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Circular profile picture */
+    border: 2px solid #800000; /* Maroon border */
+}
+
+.user-profile .user-name {
+    margin-top: 10px; /* Space above user name */
+    font-size: 18px; /* Font size for user name */
+    font-weight: bold; /* Bold user name */
+    color: #800000; /* Maroon color */
+}
+
+/* Recent Updates Section */
+.recent-updates {
+    background-color: #fff; /* White background for updates section */
+    padding: 20px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+}
+
+/* Title of Updates */
+.recent-updates h4 {
+    color: #800000; /* Maroon color for updates title */
+    margin-bottom: 15px; /* Space below updates title */
+    font-size: 20px; /* Larger font size for title */
+}
+
+/* Update List Styles */
+.recent-updates ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+/* Individual List Items */
+.recent-updates li {
+    margin-bottom: 10px; /* Space between items */
+    padding: 10px; /* Padding for items */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light gray for items */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Hover Effect for List Items */
+.recent-updates li:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .right-sidebar {
+        width: 200px; /* Reduce width for smaller screens */
+    }
+    .user-profile img {
+        width: 60px; /* Smaller profile picture on mobile */
+        height: 60px; /* Maintain aspect ratio */
+    }
+    .recent-updates h4 {
+        font-size: 18px; /* Smaller title font on mobile */
+    }
+    .recent-updates li {
+        font-size: 12px; /* Smaller font for updates on mobile */
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe; /* White background for modal */
+    margin: auto; /* Centered */
+    padding: 20px; /* Inner spacing */
+    border: 1px solid #888; /* Border for modal */
+    width: 400px; /* Fixed width for square modal */
+    height: 400px; /* Fixed height for square modal */
+    border-radius: 10px; /* Rounded corners for modal */
+}
+
+/* Close Button */
+.close-modal {
+    color: #aaa; /* Light gray for close button */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #800000; /* Change color to maroon on hover */
+    text-decoration: none;
+    cursor: pointer; /* Pointer cursor for close button */
+}
